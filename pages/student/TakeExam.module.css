@@ -1,0 +1,184 @@
+/* pages/student/TakeExam.module.css */
+.lockdownWrapper {
+  min-height: 100vh;
+  background-color: var(--color-background);
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .lockdownWrapper {
+    padding: 2rem;
+  }
+}
+
+.content {
+  max-width: 48rem; /* 768px */
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.progressBarContainer {
+  width: 100%;
+  height: 0.75rem; /* 12px */
+  background-color: #e5e7eb; /* gray-200 */
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 9999px;
+  transition: width 0.3s ease-in-out;
+}
+
+.questionText {
+  font-size: 1.125rem; /* 18px */
+  color: var(--color-text-primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* --- Objective Styles --- */
+.optionsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* 12px */
+}
+
+.optionButton {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e5e7eb; /* gray-200 */
+  border-radius: 0.5rem;
+  text-align: left;
+  font-weight: 500;
+  background-color: #f9fafb; /* gray-50 */
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.optionButton:hover {
+  border-color: #fca5a5; /* red-300 */
+}
+
+.optionButtonSelected {
+  border-color: var(--color-primary);
+  background-color: #fff7ed; /* orange-50 */
+  color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+/* --- Theory Styles --- */
+.theoryList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* Spacing between questions */
+}
+
+.theoryItem {
+  /* No special styles needed */
+}
+
+.theoryHeader {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.theoryTextarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 1rem;
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.theoryTextarea:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.finalSubmitWrapper {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end; /* Aligns button to the right */
+}
+
+/* pages/student/TakeExam.module.css */
+
+/* ... (all your existing styles) ... */
+
+/* --- NEW STYLES FOR CHECKPOINT SCREEN --- */
+.checkpointCard {
+  text-align: center;
+  padding: 2rem;
+}
+
+.checkpointIconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem; /* 64px */
+  height: 4rem; /* 64px */
+  border-radius: 9999px;
+  margin: 0 auto 1.5rem;
+  background-color: #dcfce7; /* green-100 */
+  color: #22c55e; /* green-500 */
+}
+
+.checkpointTitle {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.checkpointSubtitle {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}

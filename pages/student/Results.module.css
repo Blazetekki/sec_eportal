@@ -1,0 +1,63 @@
+/* pages/student/Results.module.css */
+.wrapper {
+  max-width: 64rem; /* 1024px */
+  margin: 0 auto;
+}
+/* pages/student/Results.module.css */
+
+.wrapper {
+  max-width: 64rem; /* 1024px */
+  margin: 0 auto;
+}
+
+/* --- NEW STYLES --- */
+.filterBar {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid #f3f4f6; /* gray-100 */
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.filterLabel {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.filterSelect {
+  width: 100%;
+  padding: 0.75rem; /* 12px */
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 0.5rem; /* 8px */
+  background-color: #f9fafb; /* gray-50 */
+  font-weight: 500;
+}
+
+.filterSelect:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+/* --- Responsive styles for desktop --- */
+@media (min-width: 768px) {
+  .filterBar {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .filterGroup {
+    flex: 1; /* Make groups grow equally */
+  }
+}

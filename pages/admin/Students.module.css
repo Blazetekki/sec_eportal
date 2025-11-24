@@ -1,0 +1,87 @@
+/* pages/admin/Students.module.css */
+.header {
+  display: flex;
+  flex-direction: column; /* Stack on mobile */
+  gap: 1rem;
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addButton {
+  width: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.addButtonIcon {
+  width: 1rem; /* 16px */
+  height: 1rem;
+}
+
+/* --- NEW FILTER STYLES --- */
+.filterBar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.searchInputWrapper {
+  position: relative;
+  flex: 1 1 0%;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 2.5rem; /* 12px 12px 12px 40px */
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 0.5rem;
+  background-color: var(--color-card-bg);
+}
+
+.searchIconWrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.75rem;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  color: var(--color-text-secondary);
+}
+
+.searchIcon {
+  width: 1.125rem; /* 18px */
+  height: 1.125rem;
+}
+
+.selectInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background-color: var(--color-card-bg);
+}
+/* --- END OF NEW STYLES --- */
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+  }
+  .filterBar {
+    flex-direction: row;
+    min-width: 400px;
+  }
+  .selectInput {
+    width: auto;
+    min-width: 150px;
+  }
+}

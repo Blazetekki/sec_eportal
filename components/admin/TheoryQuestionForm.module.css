@@ -1,0 +1,48 @@
+/* components/admin/TheoryQuestionForm.module.css */
+/* These styles are identical to the others */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+}
+.textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background-color: #f9fafb;
+  font-weight: 500;
+  font-family: inherit;
+  min-height: 120px;
+}
+.textarea:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+.buttonWrapper {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* components/admin/TheoryQuestionForm.module.css */
+/* ... (all other styles are the same) ... */
+
+.buttonWrapper {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem; /* <-- THIS IS THE NEW LINE */
+}

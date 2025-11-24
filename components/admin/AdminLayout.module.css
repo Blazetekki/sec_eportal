@@ -1,0 +1,42 @@
+/* components/admin/AdminLayout.module.css */
+.layout {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 210px 1fr;
+  height: 100vh;
+}
+
+.navbar {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  background-color: var(--color-card-bg); /* White navbar */
+  border-bottom: 1px solid #e5e7eb; /* gray-200 */
+}
+
+.sidebar {
+  grid-column: 1;
+  grid-row: 2;
+  overflow-y: auto;
+  background-color: var(--color-primary); /* Green sidebar */
+}
+
+.content {
+  grid-column: 2;
+  grid-row: 2;
+  overflow-y: auto;
+  padding: 2rem;
+  background-color: var(--color-content-background); /* <-- NEW LIGHT GRAY BG */
+}
+
+@media (max-width: 768px) {
+  /* ... (mobile styles are unchanged) ... */
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    display: none;
+  }
+  .content {
+    grid-column: 1;
+  }
+}

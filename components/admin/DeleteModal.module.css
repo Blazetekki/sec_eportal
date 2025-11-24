@@ -1,0 +1,48 @@
+/* components/admin/DeleteModal.module.css */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem; /* 64px */
+  height: 4rem;
+  border-radius: 9999px;
+  background-color: #fee2e2; /* red-100 */
+}
+
+.icon {
+  width: 2rem; /* 32px */
+  height: 2rem;
+  color: #ef4444; /* red-500 */
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.message {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .actions {
+    flex-direction: row;
+  }
+}

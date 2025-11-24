@@ -1,0 +1,32 @@
+/* styles/globals.css */
+
+:root {
+  /* --- THIS IS THE NEW GREEN THEME --- */
+  --color-primary: #15803d; /* A deep, professional green (green-700) */
+  --color-primary-hover: #16a34a; /* A slightly lighter green (green-600) */
+  --color-primary-text: #ffffff;
+
+  /* --- NEW ADMIN LAYOUT COLORS --- */
+  --color-content-background: #f3f4f6; /* Light gray for content area (gray-100) */
+
+  /* --- Standard Colors --- */
+  --color-background: #fefce8; /* Sandy Beige (amber-50) - for STUDENT pages */
+  --color-text-primary: #111827; /* (gray-900) */
+  --color-text-secondary: #6b7280; /* (gray-500) */
+  --color-card-bg: #ffffff;
+}
+
+body {
+  /* We set the default background for STUDENT pages */
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji";
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}

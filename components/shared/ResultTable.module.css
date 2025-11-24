@@ -1,0 +1,66 @@
+/* components/shared/ResultTable.module.css */
+.tableContainer {
+  width: 100%;
+  overflow-x: auto; /* Ensures table is scrollable on small screens */
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* Prevents squishing on mobile */
+}
+
+.thead {
+  background-color: #f9fafb; /* gray-50 */
+}
+
+.th {
+  padding: 0.75rem 1rem; /* 12px 16px */
+  text-align: left;
+  font-size: 0.75rem; /* 12px */
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tr {
+  border-bottom: 1px solid #f3f4f6; /* gray-100 */
+}
+
+.tbody .tr:last-child {
+  border-bottom: none;
+}
+
+.td {
+  padding: 1rem;
+  font-size: 0.875rem; /* 14px */
+  color: var(--color-text-primary);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* --- Remark Badge Styles --- */
+.remark {
+  padding: 0.25rem 0.75rem; /* 4px 12px */
+  border-radius: 9999px;
+  font-weight: 500;
+  display: inline-block;
+  font-size: 0.75rem; /* 12px */
+}
+
+.remarkExcellent {
+  background-color: #dcfce7; /* green-100 */
+  color: #166534; /* green-800 */
+}
+
+.remarkGood {
+  background-color: #fef9c3; /* yellow-100 */
+  color: #854d0e; /* yellow-800 */
+}
+
+.remarkPoor {
+  background-color: #fee2e2; /* red-100 */
+  color: #991b1b; /* red-800 */
+}

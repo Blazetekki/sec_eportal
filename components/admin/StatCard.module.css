@@ -1,0 +1,51 @@
+/* components/admin/StatCard.module.css */
+.card {
+  background-color: var(--color-card-bg);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+/* ... (iconWrapper, icon, content, value, title are unchanged) ... */
+.iconWrapper {
+  flex-shrink: 0;
+  padding: 0.75rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.content {
+  flex: 1 1 0%;
+}
+.value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+.title {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+/* --- THIS IS THE UPDATE --- */
+.orange { /* This class is still named "orange", but styles are green */
+  background-color: #f0fdf4; /* green-50 */
+  color: #16a34a; /* green-600 */
+}
+/* --- END OF UPDATE --- */
+
+.blue {
+  background-color: #eff6ff; /* blue-50 */
+  color: #60a5fa; /* blue-400 */
+}
+.green {
+  background-color: #f0fdf4; /* green-50 */
+  color: #4ade80; /* green-400 */
+}

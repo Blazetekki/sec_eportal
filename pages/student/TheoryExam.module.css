@@ -1,0 +1,66 @@
+/* pages/student/TheoryExam.module.css */
+.wrapper {
+  max-width: 48rem; /* 768px */
+  margin: 0 auto;
+}
+
+.scrollContainer {
+  /* This creates the scrollable list */
+  max-height: 70vh; /* 70% of the viewport height */
+  overflow-y: auto;
+  padding: 1.5rem;
+  background-color: #f9fafb; /* gray-50 */
+  border: 1px solid #f3f4f6; /* gray-100 */
+  border-radius: 0.75rem; /* 12px */
+}
+
+.questionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* Spacing between questions */
+}
+
+.questionItem {
+  /* No special styles needed */
+}
+
+.questionHeader {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.questionText {
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.answerTextarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 1rem;
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.answerTextarea:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.submitWrapper {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end; /* Aligns button to the right */
+}

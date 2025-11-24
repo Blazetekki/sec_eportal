@@ -1,0 +1,42 @@
+/* components/shared/Button.module.css */
+.button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+}
+.button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- THIS IS THE UPDATE --- */
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+}
+.primary:not(:disabled):hover {
+  background-color: var(--color-primary-hover);
+  transform: scale(1.05);
+}
+.primary:focus {
+  box-shadow: 0 0 0 2px var(--color-card-bg),
+    0 0 0 4px var(--color-primary);
+}
+/* --- END OF UPDATE --- */
+
+.secondary {
+  /* ... */
+}
+.danger {
+  /* ... */
+}

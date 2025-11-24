@@ -1,0 +1,191 @@
+/* pages/admin/student/StudentProfile.module.css */
+.pageWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* --- Section 1: Profile Card --- */
+/* ... (All .profileCard, .profileContent, .profileImage, etc. styles are unchanged) ... */
+.profileCard {
+  /* This will be 1 column on mobile, 1/3 width on desktop */
+}
+
+.profileContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profileImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 9999px;
+  border: 4px solid var(--color-primary);
+  object-fit: cover;
+  background-color: #e5e7eb; /* gray-200 */
+}
+
+.profileName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.detailList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border-top: 1px solid #f3f4f6; /* gray-100 */
+  padding-top: 1.5rem;
+}
+
+.detailItem {
+  /* No styles needed, for structure */
+}
+
+.detailLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.detailValue {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  word-break: break-word;
+}
+
+/* --- Sections 2 & 3: Main Content --- */
+/* ... (All .mainContent, .filterBar, .resultsTableContainer styles are unchanged) ... */
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.filterBar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.filterLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.filterSelect {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background-color: var(--color-card-bg);
+}
+
+.resultsTableContainer {
+  width: 100%;
+  max-height: 400px; /* This makes the table scrollable */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* --- THIS IS THE UPDATE --- */
+.achievementList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  /* --- NEW: Makes this section scrollable --- */
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.5rem; /* Space for the scrollbar */
+}
+
+.achievementItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid #f3f4f6; /* gray-100 */
+  border-radius: 0.75rem;
+  /* Default background color */
+  background-color: #f9fafb; /* gray-50 */
+}
+
+.achievementIcon {
+  flex-shrink: 0;
+  width: 1.125rem; /* 18px */
+  height: 1.125rem; /* 18px */
+  /* Default icon color */
+  color: var(--color-text-secondary);
+}
+
+.achievementAward {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.achievementDate {
+  font-size: 0.75rem; /* 12px */
+  color: var(--color-text-secondary);
+}
+
+/* --- NEW: Attractive Color Variants --- */
+.itemGreen {
+  background-color: #f0fdf4; /* green-50 */
+  border-color: #bbf7d0; /* green-200 */
+}
+.itemGreen .achievementIcon {
+  color: #22c55e; /* green-500 */
+}
+
+.itemBlue {
+  background-color: #eff6ff; /* blue-50 */
+  border-color: #bfdbfe; /* blue-200 */
+}
+.itemBlue .achievementIcon {
+  color: #3b82f6; /* blue-500 */
+}
+
+.itemOrange {
+  background-color: #fff7ed; /* orange-50 */
+  border-color: #fed7aa; /* orange-200 */
+}
+.itemOrange .achievementIcon {
+  color: #f97316; /* orange-500 */
+}
+/* --- END OF UPDATE --- */
+
+
+/* --- Desktop Layout --- */
+@media (min-width: 1024px) {
+/* ... (media query styles are unchanged) ... */
+  .pageWrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .profileCard {
+    grid-column: span 1 / span 1;
+  }
+  .mainContent {
+    grid-column: span 2 / span 2;
+  }
+  .filterBar {
+    flex-direction: row;
+  }
+}

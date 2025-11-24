@@ -1,0 +1,16 @@
+/* --- UPDATE THIS STYLE --- */
+.actions {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 column on mobile */
+  gap: 1rem; /* 16px */
+}
+
+/* --- Responsive styles for desktop --- */
+@media (min-width: 768px) {
+  /* ... (existing .wrapper, .profileColumn, .mainColumn) ... */
+
+  .actions {
+    /* 3 columns on desktop */
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,191 @@
+/* components/shared/Navbar.module.css */
+
+/*
+  This file now handles TWO themes:
+  1. The default (green) theme for Student pages.
+  2. The new 'navWhite' theme for Admin pages.
+*/
+
+.nav {
+  background-color: var(--color-primary); /* Default is green */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* --- NEW WHITE NAVBAR FOR ADMIN --- */
+.navWhite {
+  background-color: var(--color-card-bg); /* White background */
+  border-bottom: 1px solid #e5e7eb; /* gray-200 */
+  box-shadow: none;
+}
+/* Update text color for white nav */
+.navWhite .logo {
+  color: var(--color-text-primary);
+}
+.navWhite .userName {
+  color: var(--color-text-primary);
+}
+.navWhite .logoutButton {
+  color: var(--color-text-secondary);
+}
+.navWhite .logoutButton:hover {
+  color: var(--color-text-primary);
+  background-color: #f3f4f6; /* gray-100 */
+}
+/* --- END OF NEW STYLES --- */
+
+
+.wrapper {
+  max-width: 100%; /* Changed from 80rem to be full-width */
+  margin: 0 auto;
+  padding: 0 1.5rem; /* Added more padding */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+/* ... (rest of the file: .leftContainer, .logo, etc. are unchanged) ... */
+.leftContainer {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  color: var(--color-primary-text);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.desktopMenu {
+  display: none;
+}
+.rightContainer {
+  display: none;
+}
+.userInfo {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+.userName {
+  color: var(--color-primary-text);
+  margin-right: 0.75rem;
+  font-weight: 500;
+}
+.userImage {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  border: 2px solid #dcfce7; /* green-100 */
+}
+.logoutButton {
+  margin-left: 1rem;
+  padding: 0.5rem;
+  color: #dcfce7; /* green-100 */
+  background: none;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.logoutButton:hover {
+  color: var(--color-primary-text);
+  background-color: var(--color-primary-hover);
+}
+.mobileMenuToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  color: #dcfce7; /* green-100 */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.mobileMenuToggle:hover {
+  color: var(--color-primary-text);
+  background-color: var(--color-primary-hover);
+}
+.mobileMenu {
+  padding: 0.5rem 0.5rem 0.75rem;
+  border-top: 1px solid var(--color-primary-hover);
+}
+.mobileUserInfo {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.mobileUserDetails {
+  margin-left: 0.75rem;
+}
+.mobileUserName {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-primary-text);
+}
+.mobileUserRole {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #dcfce7; /* green-100 */
+}
+.mobileLogoutButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #dcfce7; /* green-100 */
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.mobileLogoutButton:hover {
+  color: var(--color-primary-text);
+  background-color: var(--color-primary-hover);
+}
+.navLink {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #dcfce7; /* green-100 */
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.navLink:hover {
+  color: var(--color-primary-text);
+  background-color: var(--color-primary-hover);
+}
+.navLinkActive {
+  background-color: var(--color-primary-hover);
+  color: var(--color-primary-text);
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding: 0 2rem;
+  }
+  .desktopMenu {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-left: 2.5rem;
+  }
+  .rightContainer {
+    display: flex;
+    align-items: center;
+  }
+  .mobileMenuToggle {
+    display: none;
+  }
+  .mobileMenu {
+    display: none;
+  }
+}

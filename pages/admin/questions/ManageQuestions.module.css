@@ -1,0 +1,109 @@
+/* pages/admin/questions/ManageQuestions.module.css */
+.pageGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .pageGrid {
+    grid-template-columns: 1fr 1fr; /* Two columns on desktop */
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addButton {
+  width: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.addButtonIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.questionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  /* --- REMOVED SCROLLBARS ---
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  */
+}
+
+.questionItem {
+  display: flex;
+  align-items: flex-start; /* Align number and text to the top */
+  gap: 0.75rem; /* Gap between number, text, and buttons */
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #f9fafb; /* gray-50 */
+  border: 1px solid #f3f4f6; /* gray-100 */
+}
+
+/* --- NEW: Style for the question number --- */
+.questionNumber {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.questionText {
+  flex: 1; /* Text takes up available space */
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+  /* --- REMOVED TRUNCATION --- */
+  white-space: normal; /* Allow text to wrap */
+  word-break: break-word;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.actionButton {
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.icon {
+  width: 1.125rem; /* 18px */
+  height: 1.125rem;
+}
+.editButton {
+  color: #3b82f6; /* blue-500 */
+}
+.editButton:hover {
+  background-color: #eff6ff; /* blue-50 */
+}
+.deleteButton {
+  color: #ef4444; /* red-500 */
+}
+.deleteButton:hover {
+  background-color: #fee2e2; /* red-50 */
+}
+
+/* --- NEW: Wrapper for pagination --- */
+.paginationWrapper {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f3f4f6; /* gray-100 */
+}

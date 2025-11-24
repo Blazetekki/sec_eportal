@@ -1,0 +1,60 @@
+/* components/shared/Modal.module.css */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal {
+  background-color: var(--color-card-bg);
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 32rem; /* 512px */
+  position: relative;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #f3f4f6; /* gray-100 */
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.25rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+.closeButton:hover {
+  background-color: #f3f4f6; /* gray-100 */
+  color: var(--color-text-primary);
+}
+.icon {
+  width: 1.5rem; /* 24px */
+  height: 1.5rem;
+}
+
+.content {
+  padding: 1.5rem;
+  overflow-y: auto;
+}

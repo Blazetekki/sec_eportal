@@ -1,0 +1,110 @@
+/* components/admin/LiveExamControl.module.css */
+.examList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.examItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #f3f4f6; /* gray-100 */
+  border-radius: 0.75rem;
+  background-color: #f9fafb; /* gray-50 */
+}
+
+.examDetails {
+  flex: 1 1 0%;
+}
+
+.examSubject {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.examMeta {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.examStatus {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.statusPublished {
+  color: #166534; /* green-800 */
+}
+
+.statusDraft {
+  color: #9ca3af; /* gray-400 */
+}
+
+.noExams {
+  text-align: center;
+  color: var(--color-text-secondary);
+  padding: 2rem;
+}
+
+/* --- Live Status Styles --- */
+.liveItem {
+  background-color: #fee2e2; /* red-100 */
+  border-color: #fca5a5; /* red-300 */
+}
+
+.liveSubject {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #991b1b; /* red-800 */
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.liveIcon {
+  width: 1.25rem; /* 20px */
+  height: 1.25rem;
+  color: #dc2626; /* red-600 */
+}
+
+
+@media (min-width: 640px) {
+  .examItem {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (min-width: 640px) {
+  .examItem {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* --- NEW STYLE FOR THE BUTTONS --- */
+/* components/admin/LiveExamControl.module.css */
+/* ... (all your existing styles up to .liveIcon) ... */
+
+@media (min-width: 640px) {
+  .examItem {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* --- THIS IS THE NEW STYLE FOR THE BUTTONS --- */
+.actionButton {
+  width: auto; /* This makes the button "short" */
+  padding: 0.5rem 1rem; /* Makes it sleek */
+  font-size: 0.875rem;
+  font-weight: 500;
+}

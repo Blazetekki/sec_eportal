@@ -1,0 +1,102 @@
+/* components/admin/Sidebar.module.css */
+.sidebar {
+  background-color: var(--color-primary);
+  width: 210px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0.75rem;
+}
+
+.navHeading {
+  font-size: 0.75rem; /* 12px */
+  font-weight: 500;
+  color: #a7f3d0; /* green-200 */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex-grow: 1; /* This pushes the logout button down */
+}
+
+/* --- Sleeker link styles --- */
+.navLink {
+  display: flex;
+  align-items: center;
+  padding: 0.625rem 1rem; /* 10px 16px */
+  border-radius: 0.5rem;
+  font-weight: 400; /* Lighter font */
+  font-size: 0.8125rem; /* 13px */
+  color: #dcfce7; /* green-100 */
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.navLink:hover {
+  background-color: var(--color-primary-hover);
+  color: var(--color-primary-text);
+}
+
+.navLinkActive {
+  background-color: var(--color-card-bg);
+  color: var(--color-primary);
+  font-weight: 500; /* Active link is bolder */
+}
+
+.navLinkActive:hover {
+  background-color: var(--color-card-bg);
+  color: var(--color-primary-hover);
+}
+
+.icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 0.75rem; /* 12px */
+}
+
+/* --- NEW LOGOUT STYLES --- */
+.logoutNav {
+  padding-top: 0.5rem;
+  border-top: 1px solid #14532d; /* A dark green separator (green-900) */
+}
+
+.logoutButton {
+  /* We copy the styles from .navLink to make it identical */
+  display: flex;
+  align-items: center;
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 400;
+  font-size: 0.8125rem;
+  color: #dcfce7; /* green-100 */
+  text-decoration: none;
+  transition: all 0.2s;
+
+  /* These are button-specific resets */
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+}
+
+.logoutButton:hover {
+  background-color: var(--color-primary-hover);
+  color: var(--color-primary-text);
+}
+/* --- END OF NEW STYLES --- */
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/* Added a newline at the end to ensure no EOF parsing error */

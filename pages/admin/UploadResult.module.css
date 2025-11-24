@@ -1,0 +1,71 @@
+/* pages/admin/UploadResult.module.css */
+.filterBar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.selectInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background-color: var(--color-card-bg);
+}
+
+.loadButton {
+  width: 100%;
+}
+
+/* --- REMOVED: .saveButtonWrapper and .saveButton (no longer needed) --- */
+
+/* --- NEW: Search Bar Styles --- */
+.searchWrapper {
+  padding: 1.5rem 0 0;
+  border-top: 1px solid #f3f4f6; /* gray-100 */
+}
+
+.searchInputWrapper {
+  position: relative;
+  flex: 1 1 0%;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background-color: var(--color-card-bg);
+}
+
+.searchIconWrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.75rem;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  color: var(--color-text-secondary);
+}
+
+.searchIcon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+/* --- END OF NEW STYLES --- */
+
+
+@media (min-width: 1024px) {
+  .filterBar {
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 1.5rem;
+    align-items: flex-end;
+  }
+  .loadButton {
+    width: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

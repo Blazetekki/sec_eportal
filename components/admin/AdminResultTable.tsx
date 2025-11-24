@@ -1,15 +1,16 @@
 // components/admin/AdminResultTable.tsx
 import React from 'react';
-// --- THIS IS THE FIX ---
 import { ExamResult, StudentRecord } from '@/data/types';
-// --- END OF FIX ---
 import styles from './AdminResultTable.module.css';
 
-// This component receives the "joined" data
+// --- THIS IS THE FIX ---
+// We explicitly add 'id' to the type definition here to ensure TypeScript sees it.
 type JoinedResult = ExamResult & {
+  id: string;
   studentName: string;
   regNo: string;
 };
+// --- END OF FIX ---
 
 type AdminResultTableProps = {
   results: JoinedResult[];

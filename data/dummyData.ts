@@ -1,4 +1,3 @@
-// data/dummyData.ts
 import {
   Student,
   Admin,
@@ -14,7 +13,7 @@ const SS2_MATHEMATICS_EXAM: Exam = {
   id: 'EXAM-MATH-SS2',
   subject: 'Mathematics',
   class: 'SS 2',
-  status: 'Published', // Let's make it Published by default
+  status: 'Published',
   durationMinutes: 45,
   objectiveQuestions: [
     { id: 1, question: 'What is 2 + 2?', options: ['3', '4', '5', '6'], correct: '4' },
@@ -34,30 +33,17 @@ export const DUMMY_DATA = {
     regNo: 'SS2A001',
     class: 'SS 2',
     photo: 'https://placehold.co/100x100/EBF4FF/4A90E2?text=PA',
-  },
+  } as Student,
+
   adminProfile: {
     id: 'T-001',
     name: 'Mrs. Okonjo',
     role: 'Admin',
     photo: 'https://placehold.co/100x100/FFF6E5/FFA500?text=AD',
-  },
+  } as Admin,
 
   // This is our "database table" for live exams.
-  liveExams: [
-    {
-      id: 'EXAM-MATH-SS2',
-      subject: 'Mathematics',
-      class: 'SS 2',
-      status: 'Published',
-      durationMinutes: 45,
-      objectiveQuestions: [
-        { id: 1, question: 'What is 2 + 2?', options: ['3', '4', '5', '6'], correct: '4' },
-      ],
-      theoryQuestions: [
-        { id: 6, question: "Explain Pythagoras' theorem with an example." },
-      ],
-    }
-  ] as Exam[],
+  liveExams: [] as Exam[],
 
   // 1. Used by "Upload Result" for the Subject dropdown
   allExamBank: [
@@ -75,7 +61,7 @@ export const DUMMY_DATA = {
       theoryQuestions: [
         { id: 7, question: 'Write a letter to the Principal...' },
       ],
-    },
+    } as Exam,
     {
       id: 'EXAM-PHY-SS2',
       subject: 'Physics',
@@ -84,7 +70,7 @@ export const DUMMY_DATA = {
       durationMinutes: 40,
       objectiveQuestions: [],
       theoryQuestions: [],
-    },
+    } as Exam,
     {
       id: 'EXAM-CHEM-SS1',
       subject: 'Chemistry',
@@ -93,8 +79,8 @@ export const DUMMY_DATA = {
       durationMinutes: 40,
       objectiveQuestions: [],
       theoryQuestions: [],
-    },
-  ],
+    } as Exam,
+  ] as Exam[], // <-- This 'as Exam[]' fixes the Type Error
 
   // 2. Used by "Upload Result" to save/load scores from
   studentResults: [
@@ -120,32 +106,32 @@ export const DUMMY_DATA = {
     // --- SS 2 (Foyin) ---
     { id: 'R10', studentId: 'S-124', subject: 'English Language', class: 'SS 2', term: 'First Term', ca: 35, exam: 40, total: 75, remark: 'Good' },
     { id: 'R11', studentId: 'S-124', subject: 'Physics', class: 'SS 2', term: 'First Term', ca: 30, exam: 42, total: 72, remark: 'Good' },
-  ],
+  ] as ExamResult[],
 
   // 3. Used by "Upload Result" to list students
   allStudents: [
     { id: 'S-123', name: 'Peter Adenugba', regNo: 'SS2A001', class: 'SS 2', address: '123 Kado Estate, Abuja', parentPhone: '08012345678', photo: 'https://placehold.co/100x100/F0FDF4/15803D?text=PA' },
     { id: 'S-124', name: 'Foyin Ademi', regNo: 'SS2A002', class: 'SS 2', address: '456 Gwarinpa, Abuja', parentPhone: '08098765432' },
     { id: 'S-125', name: 'Chika Nwosu', regNo: 'SS1A001', class: 'SS 1', address: '789 Maitama, Abuja', parentPhone: '08011112222' },
-  ],
+  ] as StudentRecord[],
 
   allAchievements: [
     { id: 'A-1', studentId: 'S-123', award: 'Best in Mathematics (SS 1)', date: '2024-07-20' },
     { id: 'A-2', studentId: 'S-123', award: '1st Place, School Debate', date: '2024-05-10' },
     { id: 'A-3', studentId: 'S-123', award: 'Best Student in Sport 2024', date: '2024-03-15' },
     { id: 'A-4', studentId: 'S-124', award: 'Best in English Language (SS 1)', date: '2024-07-20' },
-  ],
+  ] as Achievement[],
 
   validLicense: {
     key: 'VALID-KEY-12345',
     valid: true,
     expiryDate: '2026-10-31',
     schoolName: 'Springfield High School',
-  },
+  } as License,
   expiredLicense: {
     key: 'EXPIRED-KEY-67890',
     valid: false,
     expiryDate: '2023-10-31',
     schoolName: 'Old Creek Academy',
-  },
+  } as License,
 };

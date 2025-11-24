@@ -3,10 +3,7 @@ import styles from './Button.module.css';
 
 type ButtonProps = {
   children: ReactNode;
-
-  // ✅ Proper React-safe onClick type
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-
   variant?: 'primary' | 'secondary' | 'danger';
   className?: string;
   type?: 'button' | 'submit';

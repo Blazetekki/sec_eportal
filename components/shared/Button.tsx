@@ -1,12 +1,15 @@
 // components/shared/Button.tsx
 import React, { ReactNode } from 'react';
-import styles from './Button.module.css'; // Import our new CSS Module
+import styles from './Button.module.css';
 
 type ButtonProps = {
   children: ReactNode;
-  onClick?: () => void;
+  // --- THIS IS THE FIX ---
+  // We updated the type to accept the MouseEvent
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  // --- END OF FIX ---
   variant?: 'primary' | 'secondary' | 'danger';
-  className?: string; // We keep this for extra custom classes
+  className?: string;
   type?: 'button' | 'submit';
   disabled?: boolean;
 };
@@ -19,10 +22,9 @@ export const Button = ({
   type = 'button',
   disabled = false,
 }: ButtonProps) => {
-  // We build our class list from the CSS module
   const classNames = [
     styles.button,
-    styles[variant], // e.g., styles.primary
+    styles[variant],
     className,
   ].join(' ');
 
@@ -31,7 +33,7 @@ export const Button = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={classNames} // Apply the generated class names
+      className={classNames}
     >
       {children}
     </button>

@@ -37,23 +37,23 @@ export const ObjectiveQuestionForm = ({
     setOptions(newOptions);
   };
 
-  // --- NEW: Function to clear the form ---
   const resetForm = () => {
     setQuestionText('');
     setOptions(['', '', '', '']);
     setCorrectAnswer('');
   };
 
-  // --- UPDATED: This function just handles the save logic ---
-  const handleSave = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
+  // --- FIX: Make 'e' optional so it satisfies both types ---
+  const handleSave = (e?: React.MouseEvent<HTMLButtonElement>) => {
+    if (e) e.preventDefault();
+
     if (!questionText || options.some(opt => !opt) || !correctAnswer) {
       showNotification('Error', 'Please fill all fields, including all 4 options and the correct answer.', 'error');
-      return false; // Indicate failure
+      return false;
     }
     if (!options.includes(correctAnswer)) {
       showNotification('Error', 'The correct answer must match one of the options.', 'error');
-      return false; // Indicate failure
+      return false;
     }
 
     const newQuestion: Question = {
@@ -64,11 +64,10 @@ export const ObjectiveQuestionForm = ({
     };
 
     onSubmit(newQuestion);
-    return true; // Indicate success
+    return true;
   };
 
-  // --- NEW: Handler for "Save & Add Another" ---
-  const handleSaveAndAdd = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSaveAndAdd = (e?: React.MouseEvent<HTMLButtonElement>) => {
     const success = handleSave(e);
     if (success) {
       showNotification('Success', 'Question saved! Ready for next.', 'success');
@@ -76,16 +75,15 @@ export const ObjectiveQuestionForm = ({
     }
   };
 
-  // --- NEW: Handler for "Save & Close" ---
-  const handleSaveAndClose = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSaveAndClose = (e?: React.MouseEvent<HTMLButtonElement>) => {
     const success = handleSave(e);
     if (success) {
-      onClose(); // Only close if save was successful
+      onClose();
     }
   };
+  // --- END OF FIX ---
 
   return (
-    // We remove the main onSubmit from the <form> tag
     <form className={styles.form}>
       <div className={styles.formGroup}>
         <label htmlFor="questionText" className={styles.label}>
@@ -131,14 +129,13 @@ export const ObjectiveQuestionForm = ({
         />
       </div>
 
-      {/* --- UPDATED: Two save buttons --- */}
       <div className={styles.buttonWrapper}>
         <Button
           type="button"
           variant="secondary"
           className="w-auto"
           onClick={handleSaveAndAdd}
-          disabled={isEditMode} // Disable "Add Another" in edit mode
+          disabled={isEditMode}
         >
           Save & Add Another
         </Button>

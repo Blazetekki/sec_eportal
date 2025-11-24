@@ -9,7 +9,7 @@ import {
 } from './types';
 
 // We just define this data so it can be in the allExamBank
-const SS2_MATHEMATICS_EXAM: Exam = {
+const SS2_MATHEMATICS_EXAM = {
   id: 'EXAM-MATH-SS2',
   subject: 'Mathematics',
   class: 'SS 2',
@@ -24,7 +24,7 @@ const SS2_MATHEMATICS_EXAM: Exam = {
     { id: 6, question: "Explain Pythagoras' theorem with an example." },
     { id: 11, question: "Define 'quadratic equation' and provide the formula." },
   ],
-};
+} satisfies Exam;
 
 export const DUMMY_DATA = {
   studentProfile: {
@@ -47,7 +47,6 @@ export const DUMMY_DATA = {
   liveExams: [] as Exam[],
 
   // 1. Used by "Upload Result" for the Subject dropdown
-  // We cast this array as Exam[] to fix the TypeScript error
   allExamBank: [
     SS2_MATHEMATICS_EXAM,
     {
@@ -63,7 +62,7 @@ export const DUMMY_DATA = {
       theoryQuestions: [
         { id: 7, question: 'Write a letter to the Principal...' },
       ],
-    } as Exam,
+    },
     {
       id: 'EXAM-PHY-SS2',
       subject: 'Physics',
@@ -72,7 +71,7 @@ export const DUMMY_DATA = {
       durationMinutes: 40,
       objectiveQuestions: [],
       theoryQuestions: [],
-    } as Exam,
+    },
     {
       id: 'EXAM-CHEM-SS1',
       subject: 'Chemistry',
@@ -81,8 +80,8 @@ export const DUMMY_DATA = {
       durationMinutes: 40,
       objectiveQuestions: [],
       theoryQuestions: [],
-    } as Exam,
-  ] as Exam[],
+    },
+  ] satisfies Exam[],
 
   // 2. Used by "Upload Result" to save/load scores from
   studentResults: [

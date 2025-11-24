@@ -61,7 +61,7 @@ export const DUMMY_DATA = {
       theoryQuestions: [
         { id: 7, question: 'Write a letter to the Principal...' },
       ],
-    } as Exam,
+    } as Exam, // <--- Added explicit cast
     {
       id: 'EXAM-PHY-SS2',
       subject: 'Physics',
@@ -70,7 +70,7 @@ export const DUMMY_DATA = {
       durationMinutes: 40,
       objectiveQuestions: [],
       theoryQuestions: [],
-    } as Exam,
+    } as Exam, // <--- Added explicit cast
     {
       id: 'EXAM-CHEM-SS1',
       subject: 'Chemistry',
@@ -79,8 +79,8 @@ export const DUMMY_DATA = {
       durationMinutes: 40,
       objectiveQuestions: [],
       theoryQuestions: [],
-    } as Exam,
-  ] as Exam[], // <-- This 'as Exam[]' fixes the Type Error
+    } as Exam, // <--- Added explicit cast
+  ] as Exam[],
 
   // 2. Used by "Upload Result" to save/load scores from
   studentResults: [

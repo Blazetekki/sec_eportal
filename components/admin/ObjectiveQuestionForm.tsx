@@ -1,3 +1,4 @@
+// components/admin/ObjectiveQuestionForm.tsx
 import React, { useState, useEffect } from 'react';
 import { Button } from '../shared/Button';
 import styles from './ObjectiveQuestionForm.module.css';
@@ -23,7 +24,7 @@ export const ObjectiveQuestionForm = ({
   const isEditMode = questionToEdit !== null;
 
   useEffect(() => {
-    if (isEditMode && questionToEdit) {
+    if (isEditMode) {
       setQuestionText(questionToEdit.question);
       setOptions(questionToEdit.options);
       setCorrectAnswer(questionToEdit.correct);
@@ -42,22 +43,16 @@ export const ObjectiveQuestionForm = ({
     setCorrectAnswer('');
   };
 
-  const handleSave = () => {
+  // --- FIX: Make 'e' optional (?) so it satisfies the strict Button type ---
+  const handleSave = (e?: React.MouseEvent<HTMLButtonElement>) => {
+    if (e) e.preventDefault();
+
     if (!questionText || options.some(opt => !opt) || !correctAnswer) {
-      showNotification(
-        'Error',
-        'Please fill all fields, including all 4 options and the correct answer.',
-        'error'
-      );
+      showNotification('Error', 'Please fill all fields, including all 4 options and the correct answer.', 'error');
       return false;
     }
-
     if (!options.includes(correctAnswer)) {
-      showNotification(
-        'Error',
-        'The correct answer must match one of the options.',
-        'error'
-      );
+      showNotification('Error', 'The correct answer must match one of the options.', 'error');
       return false;
     }
 
@@ -72,20 +67,23 @@ export const ObjectiveQuestionForm = ({
     return true;
   };
 
-  const handleSaveAndAdd = () => {
-    const success = handleSave();
+  // Mark e as optional here too
+  const handleSaveAndAdd = (e?: React.MouseEvent<HTMLButtonElement>) => {
+    const success = handleSave(e);
     if (success) {
       showNotification('Success', 'Question saved! Ready for next.', 'success');
       resetForm();
     }
   };
 
-  const handleSaveAndClose = () => {
-    const success = handleSave();
+  // Mark e as optional here too
+  const handleSaveAndClose = (e?: React.MouseEvent<HTMLButtonElement>) => {
+    const success = handleSave(e);
     if (success) {
       onClose();
     }
   };
+  // --- END OF FIX ---
 
   return (
     <form className={styles.form}>
@@ -143,7 +141,6 @@ export const ObjectiveQuestionForm = ({
         >
           Save & Add Another
         </Button>
-
         <Button
           type="button"
           variant="primary"

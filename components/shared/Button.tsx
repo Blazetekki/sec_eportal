@@ -1,13 +1,12 @@
-// components/shared/Button.tsx
 import React, { ReactNode } from 'react';
 import styles from './Button.module.css';
 
 type ButtonProps = {
   children: ReactNode;
-  // --- THIS IS THE FIX ---
-  // We updated the type to accept the MouseEvent
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  // --- END OF FIX ---
+
+  // ✅ Proper React-safe onClick type
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+
   variant?: 'primary' | 'secondary' | 'danger';
   className?: string;
   type?: 'button' | 'submit';

@@ -43,9 +43,11 @@ export const DUMMY_DATA = {
   } as Admin,
 
   // This is our "database table" for live exams.
+  // We start with it empty.
   liveExams: [] as Exam[],
 
   // 1. Used by "Upload Result" for the Subject dropdown
+  // We cast this array as Exam[] to fix the TypeScript error
   allExamBank: [
     SS2_MATHEMATICS_EXAM,
     {
@@ -61,7 +63,7 @@ export const DUMMY_DATA = {
       theoryQuestions: [
         { id: 7, question: 'Write a letter to the Principal...' },
       ],
-    } as Exam, // <--- Added explicit cast
+    } as Exam,
     {
       id: 'EXAM-PHY-SS2',
       subject: 'Physics',
@@ -70,7 +72,7 @@ export const DUMMY_DATA = {
       durationMinutes: 40,
       objectiveQuestions: [],
       theoryQuestions: [],
-    } as Exam, // <--- Added explicit cast
+    } as Exam,
     {
       id: 'EXAM-CHEM-SS1',
       subject: 'Chemistry',
@@ -79,31 +81,20 @@ export const DUMMY_DATA = {
       durationMinutes: 40,
       objectiveQuestions: [],
       theoryQuestions: [],
-    } as Exam, // <--- Added explicit cast
+    } as Exam,
   ] as Exam[],
 
   // 2. Used by "Upload Result" to save/load scores from
   studentResults: [
-    // --- JSS 1 (Peter) ---
     { id: 'R1', studentId: 'S-123', subject: "Mathematics", class: 'JSS 1', term: 'First Term', ca: 30, exam: 50, total: 80, remark: "Excellent" },
     { id: 'R2', studentId: 'S-123', subject: "English Language", class: 'JSS 1', term: 'First Term', ca: 25, exam: 40, total: 65, remark: "Good" },
-
-    // --- JSS 2 (Peter) ---
     { id: 'R3', studentId: 'S-123', subject: "Mathematics", class: 'JSS 2', term: 'First Term', ca: 35, exam: 55, total: 90, remark: "Excellent" },
     { id: 'R4', studentId: 'S-123', subject: "Physics", class: 'JSS 2', term: 'First Term', ca: 20, exam: 30, total: 50, remark: "Good" },
-
-    // --- SS 1 (Peter) ---
     { id: 'R5', studentId: 'S-123', subject: "Mathematics", class: 'SS 1', term: 'First Term', ca: 38, exam: 55, total: 93, remark: "Excellent" },
     { id: 'R6', studentId: 'S-123', subject: "Physics", class: 'SS 1', term: 'First Term', ca: 15, exam: 22, total: 37, remark: "Poor" },
-
-    // --- SS 2 (Peter) ---
     { id: 'R7', studentId: 'S-123', subject: 'Mathematics', class: 'SS 2', term: 'First Term', ca: 32, exam: 58, total: 90, remark: 'Excellent' },
-
-    // --- SS 1 (Foyin) ---
     { id: 'R8', studentId: 'S-124', subject: "English Language", class: 'SS 1', term: 'First Term', ca: 30, exam: 45, total: 75, remark: "Good" },
     { id: 'R9', studentId: 'S-124', subject: "Chemistry", class: 'SS 1', term: 'First Term', ca: 25, exam: 35, total: 60, remark: "Good" },
-
-    // --- SS 2 (Foyin) ---
     { id: 'R10', studentId: 'S-124', subject: 'English Language', class: 'SS 2', term: 'First Term', ca: 35, exam: 40, total: 75, remark: 'Good' },
     { id: 'R11', studentId: 'S-124', subject: 'Physics', class: 'SS 2', term: 'First Term', ca: 30, exam: 42, total: 72, remark: 'Good' },
   ] as ExamResult[],

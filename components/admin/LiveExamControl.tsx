@@ -12,18 +12,16 @@ type LiveExamControlProps = {
 };
 
 export const LiveExamControl = ({ onGoLive }: LiveExamControlProps) => {
-  // --- THIS IS THE CHANGE ---
   const { liveExams, setLiveExams, showNotification } = useAuth();
-  // --- END OF CHANGE ---
 
   // Show exams that are "Published" and NOT already in the liveExams array
-  const publishedExams = DUMMY_DATA.allExamBank.filter(
+  // Cast the filtered result to Exam[] to preserve the type
+  const publishedExams: Exam[] = DUMMY_DATA.allExamBank.filter(
     (exam) =>
       exam.status === 'Published' &&
-      !liveExams.some((live) => live.id === exam.id) // <-- NEW LOGIC
+      !liveExams.some((live) => live.id === exam.id)
   );
 
-  // --- UPDATED: Now takes the specific exam to stop ---
   const handleStopLive = (examToStop: Exam) => {
     showNotification(
       'Exam Stopped',
@@ -38,7 +36,7 @@ export const LiveExamControl = ({ onGoLive }: LiveExamControlProps) => {
 
   return (
     <div>
-      {/* --- UPDATED: Now maps over all live exams --- */}
+      {/* Show all live exams */}
       {liveExams.length > 0 &&
         liveExams.map((liveExam) => (
           <div
@@ -56,16 +54,15 @@ export const LiveExamControl = ({ onGoLive }: LiveExamControlProps) => {
             </div>
             <Button
               variant="danger"
-              onClick={() => handleStopLive(liveExam)} // <-- PASS EXAM
+              onClick={() => handleStopLive(liveExam)}
               className={styles.actionButton}
             >
               Stop Live Exam
             </Button>
           </div>
         ))}
-      {/* --- END OF UPDATE --- */}
 
-      {/* 2. Show the list of "Awaiting" exams */}
+      {/* Show the list of "Awaiting" exams */}
       {publishedExams.length === 0 && liveExams.length === 0 ? (
         <p className={styles.noExams}>
           No exams are "Published".
